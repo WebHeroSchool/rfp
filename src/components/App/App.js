@@ -5,12 +5,12 @@ import ItemList from '../ItemList/ItemList';
 const todoItem = ['Important', 'Urgent', 'Miscellaneous']
 
 const App = () => (
-    <body>
+    <div>
         <h1>Todo list</h1>
         <ItemList todoItem = { todoItem}/>
         <Footer todoCount = {3} />
     
-    </body>
+    </div>
 );
 
 export default App;
