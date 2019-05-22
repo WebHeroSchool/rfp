@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from '../Item/Item';
 
-const ItemList = () => (
+const ItemList = ( { todoItem}) => (
     <ol>
-        <Item />
-        <Item />
-        <Item />
+        <Item todoItem = {todoItem[0]}/>
+        <Item todoItem = {todoItem[1]}/>
+        <Item todoItem = {todoItem[2]}/>
     </ol>
 );
 
