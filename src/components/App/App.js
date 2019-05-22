@@ -2,15 +2,29 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import ItemList from '../ItemList/ItemList';
 
-const todoItem = ['Important', 'Urgent', 'Miscellaneous']
+const App = () => {
+const todoItems = [
+    {
+        value: 'Important',
+    }, 
+    {
+        value: 'Urgent',
+    }, 
+    {
+        value: 'Miscellaneous',
+    },
+    {
+        value: 'The rest',
+    }
+];
 
-const App = () => (
+    return (
     <div>
         <h1>Todo list</h1>
-        <ItemList todoItem = { todoItem}/>
-        <Footer todoCount = {3} />
+        <ItemList todoItems = { todoItems }/>
+        <Footer todoCount = {4} />
     
     </div>
-);
+)};
 
 export default App;
