@@ -2,13 +2,15 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import ItemList from '../ItemList/ItemList';
 
+const todoItem = ['Important', 'Urgent', 'Miscellaneous']
+
 const App = () => (
-    <body>
+    <div>
         <h1>Todo list</h1>
-        <ItemList />
-        <Footer />
+        <ItemList todoItem = { todoItem}/>
+        <Footer todoCount = {3} />
     
-    </body>
+    </div>
 );
 
 export default App;
