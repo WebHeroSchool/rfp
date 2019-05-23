@@ -9,4 +9,4 @@ const ItemList = ({ todoItems }) => (
     </ol>
 );
 
-export default ItemList
+export default ItemList;
