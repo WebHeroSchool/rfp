@@ -8,15 +8,19 @@ const App = () => {
 const todoItems = [
     {
         value: 'Important',
+        isDone: false,
     }, 
     {
         value: 'Urgent',
+        isDone: false,
     }, 
     {
         value: 'Miscellaneous',
+        isDone: true,
     },
     {
         value: 'The rest',
+        isDone: true,
     }
 ];
 
