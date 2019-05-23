@@ -1,8 +1,8 @@
 import React from 'react';
-import './Footer.css';
+import styles from './Footer.module.css';
 
 const Footer = ({ todoCount }) => (
-    <footer className='footer'>Number of remaining todos: {todoCount}</footer>
+    <footer className={styles.footer}>Number of remaining todos: {todoCount}</footer>
 );
 
 export default Footer;
