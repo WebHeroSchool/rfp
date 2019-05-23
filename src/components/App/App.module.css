@@ -3,3 +3,7 @@
     width: max-content;
     font-family: 'Roboto', sans-serif;
 }
+
+.heading {
+    text-decoration: underline;
+}
