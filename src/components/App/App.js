@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import ItemList from '../ItemList/ItemList';
+import './App.css';
+
 
 const App = () => {
 const todoItems = [
@@ -19,8 +21,8 @@ const todoItems = [
 ];
 
     return (
-    <div>
-        <h1>Todo list</h1>
+    <div className='wrapper'>
+        <h1 className='wrapper__heading'>Todo list</h1>
         <ItemList todoItems = { todoItems }/>
         <Footer todoCount = {4} />
     
