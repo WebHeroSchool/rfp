@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Item = ({ value }) => (
-    <li>{ value }</li>
+    <span>{ value }</span>
 );
 
 export default Item;
