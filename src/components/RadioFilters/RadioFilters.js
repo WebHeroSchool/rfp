@@ -19,21 +19,21 @@ function FormControlLabelPosition() {
       <RadioGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
  
         <FormControlLabel
-          value="end"
+          value="all"
           control={<Radio color="primary" />}
           label="All"
           labelPlacement="end"
         />
         
         <FormControlLabel
-          value="end"
+          value="completed"
           control={<Radio color="primary" />}
           label="Completed"
           labelPlacement="end"
         />
 
         <FormControlLabel
-          value="end"
+          value="incompleted"
           control={<Radio color="primary" />}
           label="Incompleted"
           labelPlacement="end"
