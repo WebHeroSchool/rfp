@@ -4,6 +4,6 @@
 }
 
 .item {
-    display: grid;
-    grid-template-columns: auto max-content;
+    color: blue;
+    font-size: 20px;
 }

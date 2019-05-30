@@ -1,12 +1,13 @@
 import React from 'react'
 import Item from '../Item/Item';
+import styles from './ItemList.module.css';
 
 const ItemList = ({ todoItems }) => (
-    <ol>
+    <ul className={styles['item-list']}>
         {
             todoItems.map(item => <li key={item.value}><Item value = {item.value} isDone={item.isDone} /></li>)
         }
-    </ol>
+    </ul>
 );
 
 export default ItemList;
