@@ -8,32 +8,38 @@ import styles from './App.module.css';
 
 
 class App extends React.Component {
-    render() {
-        const todoItems = [
-            {
-                value: 'Important',
-                isDone: false,
-            }, 
-            {
-                value: 'Urgent',
-                isDone: false,
-            }, 
-            {
-                value: 'Miscellaneous',
-                isDone: true,
-            },
-            {
-                value: 'The rest',
-                isDone: true,
-            }
-        ];
+    constructor (props) {
+        super(props);
         
+        this.state= {
+            todoItems: [
+                {
+                    value: 'Important',
+                    isDone: false,
+                }, 
+                {
+                    value: 'Urgent',
+                    isDone: false,
+                }, 
+                {
+                    value: 'Miscellaneous',
+                    isDone: true,
+                },
+                {
+                    value: 'The rest',
+                    isDone: true,
+                }
+            ],
+        }    
+    }
+    
+    render() {
             return (
             <div className={styles.wrapper}>
                 <h1 className={styles.heading}>Todo list</h1>
                 <InputItem />
                 <RadioFilters />
-                <ItemList todoItems = { todoItems }/>
+                <ItemList todoItems = { this.state.todoItems }/>
                 <Footer todoCount = {4} />
         
             
