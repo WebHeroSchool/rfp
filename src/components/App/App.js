@@ -8,7 +8,10 @@ import styles from './App.module.css';
 
 
 class App extends React.Component {
-        state= {
+    constructor (props) {
+        super(props);
+        
+        this.state= {
             todoItems: [
                 {
                     value: 'Important',
@@ -27,7 +30,9 @@ class App extends React.Component {
                     isDone: true,
                 }
             ],
+        }    
     }
+    
     render() {
             return (
             <div className={styles.wrapper}>
