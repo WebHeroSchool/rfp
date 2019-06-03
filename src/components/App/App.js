@@ -7,30 +7,35 @@ import RadioFilters from "../RadioFilters/RadioFilters";
 import styles from "./App.module.css";
 
 class App extends React.Component {
-  state = {
-    todoItems: [
-      {
-        value: "Important",
-        isDone: false,
-        id: 1
-      },
-      {
-        value: "Urgent",
-        isDone: false,
-        id: 2
-      },
-      {
-        value: "Miscellaneous",
-        isDone: true,
-        id: 3
-      },
-      {
-        value: "The rest",
-        isDone: true,
-        id: 4
-      }
-    ]
-  };
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      todoItems: [
+        {
+          value: "Important",
+          isDone: false,
+          id: 1
+        },
+        {
+          value: "Urgent",
+          isDone: false,
+          id: 2
+        },
+        {
+          value: "Miscellaneous",
+          isDone: true,
+          id: 3
+        },
+        {
+          value: "The rest",
+          isDone: true,
+          id: 4
+        }
+      ]
+    };
+  }
+  
 
   onClickDone = id => {
     const newItemList = this.state.todoItems.map(item => {
