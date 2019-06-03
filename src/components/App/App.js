@@ -9,26 +9,30 @@ import styles from './App.module.css';import { log } from 'util';
 
 
 class App extends React.Component {
-        state= {
-            todoItems: [
-                {
-                    value: 'Important',
-                    isDone: false,
-                }, 
-                {
-                    value: 'Urgent',
-                    isDone: false,
-                }, 
-                {
-                    value: 'Miscellaneous',
-                    isDone: true,
-                },
-                {
-                    value: 'The rest',
-                    isDone: true,
-                }
-            ],
-    };
+  constructor (props) {
+      super(props);
+      
+      this.state= {
+          todoItems: [
+              {
+                  value: 'Important',
+                  isDone: false,
+              }, 
+              {
+                  value: 'Urgent',
+                  isDone: false,
+              }, 
+              {
+                  value: 'Miscellaneous',
+                  isDone: true,
+              },
+              {
+                  value: 'The rest',
+                  isDone: true,
+              }
+          ],
+      }    
+}
 
     onClickDone = isDone => console.log(isDone);
 
