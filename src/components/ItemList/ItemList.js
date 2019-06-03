@@ -2,10 +2,10 @@ import React from 'react'
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
-const ItemList = ({ todoItems }) => (
+const ItemList = ({ todoItems, onClickDone }) => (
     <ul className={styles['item-list']}>
         {
-            todoItems.map(item => <li key={item.value}><Item value = {item.value} isDone={item.isDone} /></li>)
+            todoItems.map(item => <li key={item.value}><Item value = {item.value} isDone={item.isDone} onClickDone={onClickDone} /></li>)
         }
     </ul>
 );

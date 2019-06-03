@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 
 
-  function CheckboxLabels( {value, isDone}) {
+  function CheckboxLabels( {value, isDone, onClickDone}) {
     const [state, setState] = React.useState({
       checkedA: true,
       checkedB: true,
@@ -28,7 +28,12 @@ import classnames from 'classnames';
     }
        row>
        
-        <FormControlLabel control={<Checkbox value="checkedC" />} label={value} />
+        <FormControlLabel control={
+          <Checkbox 
+          value="checkedC" 
+          checked={isDone}
+          onClick= {() => onClickDone(isDone)} />} 
+          label={value} />
        
       </FormGroup>
     );

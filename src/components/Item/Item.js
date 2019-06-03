@@ -4,13 +4,18 @@ import styles from './Item.module.css';
 import CheckboxLabels from '../CheckboxLabels/CheckboxLabels';
 import DeleteButton from '../DeleteButton/DeleteButton';
 
-const Item = ({ value, isDone }) => (
+const Item = ({ value, isDone, onClickDone }) => (
     <div  className ={classnames({
             [styles.item]: true,
             [styles.done]: isDone,
         })
         }>
-        <CheckboxLabels value={value} isDone={isDone}/>
+        <CheckboxLabels 
+        value={value} 
+        checked={isDone}
+        onClickDone={onClickDone}
+        isDone={isDone}
+        />
         <DeleteButton />
     </div>
 );

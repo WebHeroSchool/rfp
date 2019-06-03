@@ -4,42 +4,45 @@ import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import RadioFilters from '../RadioFilters/RadioFilters';
 
-import styles from './App.module.css';
+import styles from './App.module.css';import { log } from 'util';
+
 
 
 class App extends React.Component {
-    constructor (props) {
-        super(props);
-        
-        this.state= {
-            todoItems: [
-                {
-                    value: 'Important',
-                    isDone: false,
-                }, 
-                {
-                    value: 'Urgent',
-                    isDone: false,
-                }, 
-                {
-                    value: 'Miscellaneous',
-                    isDone: true,
-                },
-                {
-                    value: 'The rest',
-                    isDone: true,
-                }
-            ],
-        }    
-    }
-    
+  constructor (props) {
+      super(props);
+      
+      this.state= {
+          todoItems: [
+              {
+                  value: 'Important',
+                  isDone: false,
+              }, 
+              {
+                  value: 'Urgent',
+                  isDone: false,
+              }, 
+              {
+                  value: 'Miscellaneous',
+                  isDone: true,
+              },
+              {
+                  value: 'The rest',
+                  isDone: true,
+              }
+          ],
+      }    
+}
+
+    onClickDone = isDone => console.log(isDone);
+
     render() {
             return (
             <div className={styles.wrapper}>
                 <h1 className={styles.heading}>Todo list</h1>
                 <InputItem />
                 <RadioFilters />
-                <ItemList todoItems = { this.state.todoItems }/>
+                <ItemList todoItems = {this.state.todoItems} onClickDone={this.onClickDone} />
                 <Footer todoCount = {4} />
         
             
