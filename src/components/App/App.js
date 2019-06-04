@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer";
 import ItemList from "../ItemList/ItemList";
 import InputItem from "../InputItem/InputItem";
 import RadioFilters from "../RadioFilters/RadioFilters";
+import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
 import styles from "./App.module.css";
 
@@ -32,7 +33,8 @@ class App extends React.Component {
           isDone: true,
           id: 4
         }
-      ]
+      ],
+      count: 4
     };
   }
   
@@ -48,18 +50,27 @@ class App extends React.Component {
     this.setState({ todoItems: newItemList });
   };
 
-  onClickDelete = id => {
-    const index = this.state.todoItems.findIndex(item => item.id === id);
-    this.state.todoItems.splice(index, 1);
-    const newTodoItems = this.state.todoItems;
-    this.setState( {todoItems: newTodoItems});
-  }
+  onClickDelete = id => this.setState(state => ({ todoItems: state.todoItems.filter(item => item.id !== id)}));
+
+  onClickAdd = () => this.setState(state => ({
+      todoItems: [
+          ...state.todoItems,
+          {
+              value: 'Innefable me',
+              isDone: false,
+              id: state.count + 1,
+          }
+      ],
+  }))
 
   render() {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Todo list</h1>
-        <InputItem />
+        <div className={styles['add-form']}>
+            <InputItem />
+            <ButtonAdd onClickAdd={this.onClickAdd}/>
+        </div>
         <RadioFilters />
         <ItemList
           todoItems={this.state.todoItems}
