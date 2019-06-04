@@ -1,9 +1,9 @@
-import React from "react";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import styles from "./CheckboxLabels.module.css";
-import classnames from "classnames";
+import React from 'react';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import styles from './CheckboxLabels.module.css';
+import classnames from 'classnames';
 
 function CheckboxLabels({ value, isDone, onClickDone, id }) {
   return (
@@ -17,7 +17,7 @@ function CheckboxLabels({ value, isDone, onClickDone, id }) {
       <FormControlLabel
         control={
           <Checkbox
-            value="checkedC"
+            value='checkedC'
             checked={isDone}
             onClick={() => onClickDone(id)}
           />

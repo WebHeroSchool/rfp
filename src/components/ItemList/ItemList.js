@@ -1,9 +1,9 @@
-import React from "react";
-import Item from "../Item/Item";
-import styles from "./ItemList.module.css";
+import React from 'react';
+import Item from '../Item/Item';
+import styles from './ItemList.module.css';
 
 const ItemList = ({ todoItems, onClickDone, onClickDelete }) => (
-  <ul className={styles["item-list"]}>
+  <ul className={styles['item-list']}>
     {todoItems.map(item => (
       <li key={item.id}>
         <Item
