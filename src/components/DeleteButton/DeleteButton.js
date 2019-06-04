@@ -5,8 +5,12 @@ import styles from './DeleteButton.module.css';
 
 
 
-function DeleteButton () {
-return <IconButton aria-label="Delete" className={styles['buttondelete']}>
+function DeleteButton ({ onClickDelete, id}) {
+return <IconButton 
+        aria-label="Delete" 
+        className={styles['buttondelete']}
+        onClick={() => onClickDelete(id)}
+        >
           <DeleteIcon fontSize='small' />
         </IconButton>
 }

@@ -48,6 +48,13 @@ class App extends React.Component {
     this.setState({ todoItems: newItemList });
   };
 
+  onClickDelete = id => {
+    const index = this.state.todoItems.findIndex(item => item.id === id);
+    this.state.todoItems.splice(index, 1);
+    const newTodoItems = this.state.todoItems;
+    this.setState( {todoItems: newTodoItems});
+  }
+
   render() {
     return (
       <div className={styles.wrapper}>
@@ -57,6 +64,7 @@ class App extends React.Component {
         <ItemList
           todoItems={this.state.todoItems}
           onClickDone={this.onClickDone}
+          onClickDelete={this.onClickDelete}
         />
         <Footer todoCount={4} />
       </div>
