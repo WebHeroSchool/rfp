@@ -11,8 +11,3 @@
 .heading {
     text-decoration: underline;
 }
-
-.add-form {
-    display: flex;
-    align-items: flex-end;
-}
