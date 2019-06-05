@@ -7,7 +7,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import styles from './RadioFilters.module.css';
 
 function FormControlLabelPosition() {
-  const [value, setValue] = React.useState('female');
+  const [value, setValue] = React.useState('all');
 
   function handleChange(event) {
     setValue(event.target.value);
@@ -27,10 +27,9 @@ function FormControlLabelPosition() {
       >
         <FormControlLabel
           value='all'
-          control={<Radio color='primary' checked='true' />}
+          control={<Radio color='primary' />}
           label='All'
           labelPlacement='end'
-          checked='checkedA'
         />
 
         <FormControlLabel
