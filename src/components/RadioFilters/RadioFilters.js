@@ -12,7 +12,7 @@ function FormControlLabelPosition() {
   function handleChange(event) {
     setValue(event.target.value);
   }
-
+    
   return (
     <FormControl component='fieldset' className={styles.filters}>
       <FormLabel component='legend' className={styles.legend}>
@@ -27,9 +27,10 @@ function FormControlLabelPosition() {
       >
         <FormControlLabel
           value='all'
-          control={<Radio color='primary' />}
+          control={<Radio color='primary' checked='true' />}
           label='All'
           labelPlacement='end'
+          checked='checkedA'
         />
 
         <FormControlLabel

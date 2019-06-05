@@ -8,7 +8,7 @@ const ItemList = ({ todoItems, onClickDone, onClickDelete }) => (
       <li key={item.id}>
         <Item
           value={item.value}
-          isDone={item.isDone}
+          //isDone={item.isDone}
           onClickDone={onClickDone}
           onClickDelete={onClickDelete}
           id={item.id}
