@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Footer from '../Footer/Footer';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';

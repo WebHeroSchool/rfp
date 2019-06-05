@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -24,6 +25,13 @@ function CheckboxLabels({ value, isDone, onClickDone, id }) {
 
 Checkbox.defaultProps = {
   isDone: false
+};
+
+CheckboxLabels.propTypes = {
+  value: PropTypes.string.isRequired,
+  isDone: PropTypes.bool,
+  id: PropTypes.number.isRequired,
+  onClickDone: PropTypes.func.isRequired
 };
 
 export default CheckboxLabels;
