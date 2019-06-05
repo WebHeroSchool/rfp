@@ -17,7 +17,7 @@ function CheckboxLabels({ value, isDone, onClickDone, id }) {
       <FormControlLabel
         control={
           <Checkbox
-            value='checkedC'
+            //value='checked'
             checked={isDone}
             onClick={() => onClickDone(id)}
           />

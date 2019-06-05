@@ -32,7 +32,8 @@ class App extends React.Component {
           isDone: true,
           id: 4
         }
-      ]
+      ],
+      count: 4,
     };
   }
   
@@ -50,19 +51,34 @@ class App extends React.Component {
 
   onClickDelete = id => this.setState({ todoItems: this.state.todoItems.filter(item => item.id !== id)});
   
+  onClickAdd = value => this.setState(state => ({
+      todoItems: [
+          ...state.todoItems, 
+          {
+              value,
+              isDone: false,
+              id: state.count + 1,
+          }
+      ],
+      count: state.count + 1,
+  }))
 
   render() {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Todo list</h1>
-        <InputItem />
+        <div className={styles['add-form']}>
+            <InputItem
+                onClickAdd={this.onClickAdd}
+             />
+        </div>
         <RadioFilters />
         <ItemList
           todoItems={this.state.todoItems}
           onClickDone={this.onClickDone}
           onClickDelete={this.onClickDelete}
         />
-        <Footer todoCount={4} />
+        <Footer todoCount={this.state.count} />
       </div>
     );
   }
