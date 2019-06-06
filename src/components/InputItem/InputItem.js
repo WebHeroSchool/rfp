@@ -1,8 +1,8 @@
-import React from "react";
-import TextField from "@material-ui/core/TextField";
-import styles from "./InputItem.module.css";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import styles from './InputItem.module.css';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 class InputItem extends React.Component {
   constructor(props) {
@@ -13,22 +13,23 @@ class InputItem extends React.Component {
       helperText: '',
       error: false
     };
-
   }
 
   onButtonClick = () => {
-    if(this.state.inputValue !== '') {
-    this.setState({
-      inputValue: ''
-    })
-    this.props.onClickAdd(this.state.inputValue);
-  } else {
-    this.setState({helperText: 'Do not fuck with me! No empty tasks!', error: true})
-  }
-}
+    if (this.state.inputValue !== '') {
+      this.setState({
+        inputValue: ''
+      });
+      this.props.onClickAdd(this.state.inputValue);
+    } else {
+      this.setState({
+        helperText: 'Do not fuck with me! No empty tasks!',
+        error: true
+      });
+    }
+  };
 
   render() {
-
     return (
       <div className={styles.container}>
         <TextField
@@ -43,7 +44,13 @@ class InputItem extends React.Component {
             shrink: true
           }}
           value={this.state.inputValue}
-          onChange={event => this.setState({inputValue: event.target.value.toUpperCase(), error: false, helperText: ''})}
+          onChange={event =>
+            this.setState({
+              inputValue: event.target.value.toUpperCase(),
+              error: false,
+              helperText: ''
+            })
+          }
           helperText={this.state.helperText}
           error={this.state.error}
         />
@@ -58,7 +65,7 @@ class InputItem extends React.Component {
           </Fab>
         </div>
       </div>
-    ); 
+    );
   }
 }
 

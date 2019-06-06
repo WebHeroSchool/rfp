@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
@@ -8,7 +9,7 @@ const ItemList = ({ todoItems, onClickDone, onClickDelete }) => (
       <li key={item.id}>
         <Item
           value={item.value}
-          //isDone={item.isDone}
+          isDone={item.isDone}
           onClickDone={onClickDone}
           onClickDelete={onClickDelete}
           id={item.id}
@@ -17,5 +18,11 @@ const ItemList = ({ todoItems, onClickDone, onClickDelete }) => (
     ))}
   </ul>
 );
+
+ItemList.propTypes = {
+  todoItems: PropTypes.array,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
+};
 
 export default ItemList;

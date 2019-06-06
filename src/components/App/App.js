@@ -9,7 +9,7 @@ import styles from './App.module.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       todoItems: [
         {
@@ -33,10 +33,9 @@ class App extends React.Component {
           id: 4
         }
       ],
-      count: 4,
+      count: 4
     };
   }
-  
 
   onClickDone = id => {
     const newItemList = this.state.todoItems.map(item => {
@@ -49,28 +48,30 @@ class App extends React.Component {
     this.setState({ todoItems: newItemList });
   };
 
-  onClickDelete = id => this.setState({ todoItems: this.state.todoItems.filter(item => item.id !== id)});
-  
-  onClickAdd = value => this.setState(state => ({
+  onClickDelete = id =>
+    this.setState({
+      todoItems: this.state.todoItems.filter(item => item.id !== id)
+    });
+
+  onClickAdd = value =>
+    this.setState(state => ({
       todoItems: [
-          ...state.todoItems, 
-          {
-              value,
-              isDone: false,
-              id: state.count + 1,
-          }
+        ...state.todoItems,
+        {
+          value,
+          isDone: false,
+          id: state.count + 1
+        }
       ],
-      count: state.count + 1,
-  }))
+      count: state.count + 1
+    }));
 
   render() {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Todo list</h1>
         <div className={styles['add-form']}>
-            <InputItem
-                onClickAdd={this.onClickAdd}
-             />
+          <InputItem onClickAdd={this.onClickAdd} />
         </div>
         <RadioFilters />
         <ItemList

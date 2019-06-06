@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Item.module.css';
 import CheckboxLabels from '../CheckboxLabels/CheckboxLabels';
@@ -18,11 +19,16 @@ const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
       isDone={isDone}
       id={id}
     />
-    <DeleteButton 
-      onClickDelete={onClickDelete}
-      id={id}
-    />
+    <DeleteButton onClickDelete={onClickDelete} id={id} />
   </div>
 );
+
+Item.propTypes = {
+  value: PropTypes.string.isRequired,
+  isDone: PropTypes.bool,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
+};
 
 export default Item;
