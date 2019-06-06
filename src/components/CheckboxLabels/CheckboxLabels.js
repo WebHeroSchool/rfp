@@ -15,13 +15,7 @@ function CheckboxLabels({ value, isDone, onClickDone, id }) {
       row
     >
       <FormControlLabel
-        control={
-          <Checkbox
-            //value='checked'
-            checked={isDone}
-            onClick={() => onClickDone(id)}
-          />
-        }
+        control={<Checkbox checked={isDone} onClick={() => onClickDone(id)} />}
         label={value}
       />
     </FormGroup>
