@@ -1,22 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import styles from './CheckboxLabels.module.css';
-import classnames from 'classnames';
+import React from ' react';
+import PropTypes from ' prop-types';
+import FormGroup from ' @material-ui/core/FormGroup';
+import FormControlLabel from ' @material-ui/core/FormControlLabel';
+import Checkbox from ' @material-ui/core/Checkbox';
+import styles from ' ./CheckboxLabels.module.css';
+import classnames from ' classnames';
 
 class CheckboxLabels extends React.Component {
   componentDidMount() {
-    console.log('ComponentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('ComponentDidUpdate');
+    this.intervalId = setInterval(
+      () => console.log(`I'll eat your memory`),
+      500
+    );
   }
 
   componentWillUnmount() {
-    console.log('ComponentWillUnmount');
+    clearInterval(this.intervalId);
   }
 
   render() {
