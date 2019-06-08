@@ -34,12 +34,12 @@ class InputItem extends React.Component {
       <div className={styles.container}>
         <TextField
           className={styles.input}
-          id="standard-full-width"
-          label="Add task"
+          id=' standard-full-width'
+          label=' Add task'
           style={{ margin: 5 }}
-          placeholder="Type your task here"
+          placeholder=' Type your task here'
           fullWidth
-          margin="normal"
+          margin=' normal'
           InputLabelProps={{
             shrink: true
           }}
@@ -56,9 +56,9 @@ class InputItem extends React.Component {
         />
         <div className={styles.button}>
           <Fab
-            size="small"
-            color="secondary"
-            aria-label="Add"
+            size=' small'
+            color=' secondary'
+            aria-label=' Add'
             onClick={this.onButtonClick}
           >
             <AddIcon />

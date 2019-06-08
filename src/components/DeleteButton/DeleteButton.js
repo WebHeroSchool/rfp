@@ -6,11 +6,11 @@ import styles from './DeleteButton.module.css';
 
 const DeleteButton = ({ onClickDelete, id }) => (
   <IconButton
-    aria-label="Delete"
+    aria-label='Delete'
     className={styles['buttondelete']}
     onClick={() => onClickDelete(id)}
   >
-    <DeleteIcon fontSize="small" />
+    <DeleteIcon fontSize='small' />
   </IconButton>
 );
 
