@@ -1,9 +1,7 @@
 .wrapper {
-  display: flex;
   margin: auto;
   width: max-content;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 10px #c3c3c3;
+  padding: 10px 20px 0;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
