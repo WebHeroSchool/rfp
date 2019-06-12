@@ -1,7 +1,6 @@
 .wrapper {
   margin: auto;
   width: max-content;
-  padding: 10px 20px 0;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
@@ -13,4 +12,8 @@
 .add-form {
   display: flex;
   align-items: flex-end;
+}
+
+.container {
+  padding: 10px 20px 0;
 }
