@@ -68,16 +68,18 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <h1 className={styles.heading}>Todo list</h1>
-        <div className={styles['add-form']}>
-          <InputItem onClickAdd={this.onClickAdd} />
+        <div className={styles.container}>
+          <h1 className={styles.heading}>Todo list</h1>
+          <div className={styles['add-form']}>
+            <InputItem onClickAdd={this.onClickAdd} />
+          </div>
+          <RadioFilters />
+          <ItemList
+            todoItems={this.state.todoItems}
+            onClickDone={this.onClickDone}
+            onClickDelete={this.onClickDelete}
+          />
         </div>
-        <RadioFilters />
-        <ItemList
-          todoItems={this.state.todoItems}
-          onClickDone={this.onClickDone}
-          onClickDelete={this.onClickDelete}
-        />
         <Footer todoCount={this.state.count} />
       </div>
     );
