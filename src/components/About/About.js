@@ -15,14 +15,15 @@ class About extends React.Component {
     this.state = {
       isLoading: true,
       repoList: [],
-      hasError: false
+      hasError: false,
+      error: {}
     };
   }
 
   componentDidMount() {
     octokit.repos
       .listForUser({
-        username: 'v1valasvegan'
+        username: 'v1valasveganss'
       })
       .then(({ data }) => {
         console.log(data);
@@ -44,19 +45,19 @@ class About extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-    if (this.state.hasError) {
-      return (
-        <div className={styles.wrapper}>
-          <h3>{this.state.error.name}</h3>
-          <p>{this.state.error.message}</p>
-        </div>
-      );
-    }
+
     return (
       <div className={styles.wrapper}>
-        {isLoading ? (
-          <CircularProgress className={styles.loader} />
-        ) : (
+        {this.state.hasError && (
+          <div>
+            <h3>{this.state.error.name}</h3>
+            <p>{this.state.error.message}</p>
+          </div>
+        )}
+        
+        {isLoading && <CircularProgress className={styles.loader} />}
+        
+        {!isLoading && !this.state.hasError && (
           <div className={styles.container}>
             <div className={styles['user-info']}>
               <Avatar
