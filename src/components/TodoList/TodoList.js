@@ -69,7 +69,7 @@ class TodoList extends React.Component {
     return (
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Todo list</h1>
-        <div className={styles[' add-form']}>
+        <div className={styles['add-form']}>
           <InputItem onClickAdd={this.onClickAdd} />
         </div>
         <RadioFilters />
