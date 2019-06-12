@@ -23,7 +23,7 @@ class About extends React.Component {
   componentDidMount() {
     octokit.repos
       .listForUser({
-        username: 'v1valasveganss'
+        username: 'v1valasvegan'
       })
       .then(({ data }) => {
         console.log(data);
